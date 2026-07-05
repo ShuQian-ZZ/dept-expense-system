@@ -534,4 +534,42 @@ For more information, see https://radix-ui.com/primitives/docs/components/alert-
 })();
 </script>
 
+<style id="dashboard-detail-scroll-fix">
+.person-detail-dialog {
+  width: min(760px, calc(100vw - 24px)) !important;
+  height: min(85dvh, 760px) !important;
+  max-height: calc(100dvh - 24px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+.person-detail-dialog > [data-slot="dialog-header"] {
+  flex: 0 0 auto;
+}
+.person-detail-content {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+.person-detail-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 4px;
+}
+@media (max-width: 640px) {
+  .person-detail-dialog {
+    width: calc(100vw - 16px) !important;
+    height: calc(100dvh - 16px) !important;
+    max-height: calc(100dvh - 16px) !important;
+  }
+  .person-detail-content { gap: 12px; }
+}
+</style>
+
 </body></html>
